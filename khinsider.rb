@@ -2,11 +2,11 @@ require "rubygems"
 require "watir"
 require "watir-webdriver"
 require 'open-uri'
+in_link = ARGV[0]
 
-main_url = "http://downloads.khinsider.com/game-soundtracks/album/outrun"
 
 browser = Watir::Browser.new :firefox
-browser.goto(main_url)
+browser.goto(in_link)
 
 mp3_target = []
 
@@ -29,7 +29,7 @@ mp3_target.each do |target|
     end
   end
 
-  browser.goto(main_url)
+  browser.goto(in_link)
 
 end
 
